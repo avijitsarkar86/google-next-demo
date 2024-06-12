@@ -12,7 +12,7 @@ export default function SearchHeaderOption() {
   const pathname = usePathname();
 
   const selectTab = (tab) => { 
-    router.push(`/search/${tab === 'Images' ? 'image' : 'web'}?searchTeam=${searchTerm}`)
+    router.push(`/search/${tab === 'Images' ? 'image' : 'web'}?searchTerm=${searchTerm}`)
   }
 
   return (
