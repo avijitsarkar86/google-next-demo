@@ -4,9 +4,9 @@ import React from 'react';
 
 export default async function ImageSearchPage({ searchParams }) {
   try {
-    const { searchTerm } = searchParams;
+    const { searchTerm, start } = searchParams;
 
-    const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchTerm}&searchType=image`;
+    const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchTerm}&searchType=image&start=${start || '1'}`;
     // console.log('url : ', url);
 
     const response = await fetch(url);

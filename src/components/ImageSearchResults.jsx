@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from 'react'
+import PaginationButton from "./PaginationButton";
 
 export default function ImageSearchResults({ data }) {
   const {searchInformation, items} = data;
   return (
-    <div className="pb-24 mt-24">
+    <div className="sm:pb-24 pb-40 mt-24">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-3 space-x-4">
         {
           items.map((item) => (
@@ -29,7 +30,9 @@ export default function ImageSearchResults({ data }) {
           ))
         }
       </div>
-      
+      <div className="ml-16">
+        <PaginationButton />
+      </div>
     </div>
   )
 }
