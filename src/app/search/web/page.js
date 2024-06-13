@@ -3,9 +3,10 @@ import Link from "next/link";
 import React from 'react';
 
 export default async function WebSearchPage({ searchParams }) {
-  // console.log('searchParams : ', searchParams);
-
   const { searchTerm, start } = searchParams;
+
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
 
   const url = `https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchTerm}&start=${start || '1'}`;
   // console.log('url : ', url);
@@ -35,4 +36,8 @@ export default async function WebSearchPage({ searchParams }) {
       <WebSearchResults data={data} />
     </div>
   );
+
+
+
+
 }
