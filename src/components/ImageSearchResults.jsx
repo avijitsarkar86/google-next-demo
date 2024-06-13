@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from 'react'
+import React, { Suspense } from 'react'
 import PaginationButton from "./PaginationButton";
 
 export default function ImageSearchResults({ data }) {
@@ -31,7 +31,10 @@ export default function ImageSearchResults({ data }) {
         }
       </div>
       <div className="ml-16">
-        <PaginationButton />
+        <Suspense>
+          <PaginationButton />
+        </Suspense>
+        
       </div>
     </div>
   )

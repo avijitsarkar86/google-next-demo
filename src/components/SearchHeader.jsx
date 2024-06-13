@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import SearchBox from "./SearchBox";
@@ -22,7 +22,10 @@ export default function SearchHeader() {
         />
         </Link>
         <div className="flex-1">
-          <SearchBox /> 
+          <Suspense>
+            <SearchBox /> 
+          </Suspense>
+          
         </div>
         <div className="hidden md:inline-flex space-x-2">
           <RiSettings3Line className="bg-transparent hover:bg-gray-200 p-2 text-4xl rounded-full cursor-pointer" />
@@ -30,7 +33,10 @@ export default function SearchHeader() {
         </div>
         <button className="bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md transition-shadow ml-2">Sign In</button>
       </div>
-      <SearchHeaderOption />
+      <Suspense>
+        <SearchHeaderOption />
+      </Suspense>
+      
     </header>
   )
 }
